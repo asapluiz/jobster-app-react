@@ -1,4 +1,5 @@
-import React, {ChangeEventHandler} from "react";
+import React, {ChangeEventHandler,ReactElement} from "react";
+import { Formik, Form, useField } from 'formik';
 
 interface inputFieldType{
   labelText:string;
@@ -39,3 +40,43 @@ export default function FormRow({labelText, type, name, value, options, handleCh
     </div>
   )
 }
+
+interface InputTextFieldProps {
+  label: string;
+  id: string;
+  name: string;
+  type: string; 
+}
+interface SelectFieldProps {
+  children:  ReactElement | ReactElement[];
+  label: string;
+  id: string;
+  name: string;
+  // type: string; 
+}
+
+export function InputTextField({ label, ...props }:InputTextFieldProps){
+  const [field, meta] = useField(props);
+   return (
+     <div className='form-row'>
+       <label className="form-label" htmlFor={props.id || props.name}>{label}</label>
+       <input className="form-input" {...field} {...props} />
+       {meta.touched && meta.error ? (
+         <div className="error">{meta.error}</div>
+       ) : null}
+     </div>
+   );
+}
+
+export const MySelect = ({ label, ...props }:SelectFieldProps) => {
+  const [field, meta] = useField(props);
+  return (
+    <div>
+      <label className="form-label" htmlFor={props.id || props.name}>{label}</label>
+      <select className="form-input" {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <div className="error">{meta.error}</div>
+      ) : null}
+    </div>
+  );
+};

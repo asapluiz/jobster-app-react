@@ -1,5 +1,5 @@
-import React from "react";
-import { FaAlignLeft, FaUserCircle, FaCaretDown } from 'react-icons/fa';
+
+import { FaAlignLeft } from 'react-icons/fa';
 import Wrapper from "../assets/wrappers/NavBar";
 import { UserInfo, Logo } from ".";
 

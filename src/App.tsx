@@ -3,13 +3,18 @@ import React from "react"
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Landing, Error, Register, Dashboard } from "./pages";
 import { AddJobs, AllJobs, Profile, Stats } from "./pages/dashboard/";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
   
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Dashboard />,
+      element: (
+        <ProtectedRoute>
+          <Dashboard />
+        </ProtectedRoute>
+      ),
       errorElement: <Error />,
       children: [
         {

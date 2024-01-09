@@ -5,7 +5,7 @@ const Wrapper = styled.main`
   justify-content: center;
   align-items:center;
   
-  form{
+   .forma {
     max-width:400px;
 
     border-top: 5px solid var(--primary-500);

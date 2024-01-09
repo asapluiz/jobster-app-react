@@ -19,7 +19,265 @@ const links:linksType[] = [
 
 export default links;
 
+export const allJobsFormData = [
+  {
+    id:"1",
+    label:"Search",
+    name:"search",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+  {
+    id:"2",
+    label:"Status",
+    name:"status",
+    type:"select",
+    value:"all",
+    option:[
+      {
+        value:"all",
+        text:"all"
+      },
+      {
+        value:"interview",
+        text:"interview"
+      },
+      {
+        value:"declined",
+        text:"declined"
+      },
+      {
+        value:"pending",
+        text:"pending"
+      }
+    ]
+    //  placeholder="Jane"
+  },
 
+  {
+    id:"3",
+    label:"Type",
+    name:"type",
+    type:"select",
+    value:"all",
+    option:[
+      {
+        value:"all",
+        text:"all"
+      },
+      {
+        value:"full-time",
+        text:"full-time"
+      },
+      {
+        value:"part-time",
+        text:"part-time"
+      },
+      {
+        value:"remote",
+        text:"remote"
+      }
+    ]
+    //  placeholder="Jane"
+  },
+
+  {
+    id:"4",
+    label:"Sort",
+    name:"sort",
+    type:"select",
+    value:"latest",
+    option:[
+      {
+        value:"latest",
+        text:"latest"
+      },
+      {
+        value:"oldest",
+        text:"oldest"
+      },
+      {
+        value:"a-z",
+        text:"a-z"
+      },
+      {
+        value:"z-a",
+        text:"z-a"
+      }
+    ]
+    //  placeholder="Jane"
+  }
+]
+
+export const addJobs = [
+  {
+    id:"1",
+    label:"Position",
+    name:"position",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+  
+  {
+    id:"2",
+    label:"Company",
+    name:"company",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+
+  {
+    id:"3",
+    label:"Job Location",
+    name:"joblocation",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+  {
+    id:"4",
+    label:"Status",
+    name:"status",
+    type:"select",
+    value:"interview",
+    option:[
+     
+      {
+        value:"interview",
+        text:"interview"
+      },
+      {
+        value:"declined",
+        text:"declined"
+      },
+      {
+        value:"pending",
+        text:"pending"
+      }
+    ]
+    //  placeholder="Jane"
+  },
+
+  {
+    id:"5",
+    label:"Type",
+    name:"type",
+    type:"select",
+    value:"remote",
+    option:[
+     
+      {
+        value:"full-time",
+        text:"full-time"
+      },
+      {
+        value:"part-time",
+        text:"part-time"
+      },
+      {
+        value:"remote",
+        text:"remote"
+      }
+    ]
+    //  placeholder="Jane"
+  },
+
+  
+]
+
+export const profileJobs = [
+  {
+    id:"1",
+    label:"Name",
+    name:"name",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+  
+  {
+    id:"2",
+    label:"Last Name",
+    name:"lastname",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+
+  {
+    id:"3",
+    label:"Email",
+    name:"email",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+  
+  {
+    id:"4",
+    label:"Location",
+    name:"location",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+  
+  
+]
+
+export const loginFields = [
+  
+
+  {
+    id:"1",
+    label:"Email",
+    name:"email",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+
+  {
+    id:"2",
+    label:"Password",
+    name:"password",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+]
+
+export const registerFields = [
+  {
+    id:"1",
+    label:"Name",
+    name:"name",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+
+  {
+    id:"2",
+    label:"Email",
+    name:"email",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+
+  {
+    id:"3",
+    label:"Password",
+    name:"password",
+    type:"text",
+    value:"",
+    //  placeholder="Jane"
+  },
+]
 
 export const jobs =  [
   {

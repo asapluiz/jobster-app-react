@@ -6,7 +6,10 @@ import Wrapper from "../assets/wrappers/DashboardPage";
 
 
 
+
+
 export default function Dashboard(){
+  
   return(
     <Wrapper className="full-page"> 
       <Navlist/>

@@ -1,5 +1,5 @@
 
-import { responseUser, UserlocalStorageType } from "../redux store/reduxTypes";
+import { UserlocalStorageType } from "../redux store/reduxTypes";
 
 
 export const addUserToLocalStorage = (user:UserlocalStorageType)=>{
