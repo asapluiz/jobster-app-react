@@ -11,10 +11,11 @@ const Wrapper = styled.div`
   @media screen and (max-width: 764px){
     
     grid-template-columns: auto ;
+    row-gap: 20px;
   }
 
   @media screen and (min-width: 765px) and (max-width: 1200px){
-    
+    row-gap: 20px;
     grid-template-columns: auto auto;
   }
 

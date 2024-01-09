@@ -4,6 +4,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Landing, Error, Register, Dashboard } from "./pages";
 import { AddJobs, AllJobs, Profile, Stats } from "./pages/dashboard/";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import { loader as statLoader } from "./pages/dashboard/statsPage";
+
+
 
 function App() {
   
@@ -20,6 +23,7 @@ function App() {
         {
           path: "/",
           element: <Stats />,
+          loader: statLoader
         },
         {
           path: "addjobs",

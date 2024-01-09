@@ -1,4 +1,4 @@
-import React, {useState, ReactNode} from "react";
+import  { ReactNode} from "react";
 import Wrapper from "../assets/wrappers/InputGroupContainer";
 import { Formik, Form } from 'formik';
 import { InputTextField, MySelect } from "./FormRow";
@@ -12,7 +12,10 @@ interface formfieldsType{
   option?: Record<string, string>[] ;
 }
 
-export default function InputGroupContainer({children, formFields, title}:{title:string, children:ReactNode ,formFields:formfieldsType[]}){
+export default function InputGroupContainer(
+    {children, formFields, title, formData}:
+    {title:string, formData:Function, children:ReactNode ,formFields:formfieldsType[]}
+  ){
   
   const initialValues = ()=>{
     let values: Record<string, string> = {}
@@ -26,6 +29,11 @@ export default function InputGroupContainer({children, formFields, title}:{title
   const clearFields = ()=>{
     
   }
+  
+  const sendSearchJobData = (data: Record<string, string>)=>{
+    formData(data)
+  }
+  
   return(
     <Wrapper className="form">
       
@@ -36,10 +44,9 @@ export default function InputGroupContainer({children, formFields, title}:{title
           }
           
           onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
+            sendSearchJobData(values)
+            setSubmitting(false)
+            console.log(values)
           }}
         >
           {(formikProps) => (
@@ -48,13 +55,12 @@ export default function InputGroupContainer({children, formFields, title}:{title
               if(field.type === "text"){
                 return ( 
                 <InputTextField
-                key={field.id}
-                id={field.name}
-                label={field.label}
-                name={field.name}
-                type={field.type}
-              //  placeholder="Jane"
-              />
+                  key={field.id}
+                  id={field.name}
+                  label={field.label}
+                  name={field.name}
+                  type={field.type}
+                />
               )}else{
                 return (
                 <MySelect label={field.label} name={field.name} id={field.name} key={field.id}>

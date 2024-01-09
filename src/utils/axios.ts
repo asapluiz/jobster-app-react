@@ -10,8 +10,9 @@ const customFetch = axios.create({
 customFetch.interceptors.request.use(function (config){
   const user = getUserFromLocalStorage()
   if(user){
-    config.headers['Authorization'] = `Bearer ${user}`
+    config.headers['Authorization'] = `Bearer ${user.token}`
   }
+ 
   return config;
 })
 

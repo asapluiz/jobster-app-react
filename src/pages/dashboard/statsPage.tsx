@@ -1,15 +1,34 @@
-import React from "react";
-import { Card, CardContainer } from "../../components";
+import { CardContainer } from "../../components";
+import customFetch from "../../utils/axios";
 
-import { FaSuitcaseRolling, FaCalendarCheck, FaBug } from 'react-icons/fa';
+
+export interface JobStatstype{
+  defaultStats:{
+    pending:string 
+    interview:string 
+    declined:string 
+
+  }
+  monthlyApplications:{
+    date: string
+    count: number
+  }[]
+}
+
+export async function loader() {
+  try {
+    const resp = await customFetch.get<{data:JobStatstype}>('/jobs/stats');
+    return resp.data;
+  } catch (error: unknown) {
+    throw error 
+  }
+}
 
 
 export default function Stats(){
   return(
     <div style={{padding: "30px 50px", display:"flex", justifyContent:"center" }}>
-      
       <CardContainer />
-      {/* <Card number="30" icon={<FaSuitcaseRolling className="logo"/>} text="Interviews Scheduled" lightClor="--red-light" darkColor="--red-dark"/> */}
     </div>
   )
 }
