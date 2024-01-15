@@ -6,7 +6,7 @@ import { format } from 'date-fns';
 import clsx from 'clsx';
 
 
-type JobCardType = {
+export type JobCardType = {
   _id: string,
   company: string,
   position: string,

@@ -15,6 +15,7 @@ const Wrapper = styled.div`
     grid-template-columns: auto ;
   }
 
+  
 
 `
 

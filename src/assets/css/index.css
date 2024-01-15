@@ -429,3 +429,9 @@ ul {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+
+.alljobs-divider{
+  font-weight: 600;
+  font-size: 21px;
+}

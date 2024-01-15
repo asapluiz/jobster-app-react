@@ -10,9 +10,10 @@ interface linksType{
   path:string;
   icon: JSX.Element
 }
+export const baseURL = "http://localhost:3000"
 const links:linksType[] = [
   { id: 1, text: 'stats', path: '/', icon: <IoBarChartSharp  className="link-icon"/> },
-  { id: 2, text: 'all jobs', path: 'alljobs', icon: <MdQueryStats className="link-icon"/> },
+  { id: 2, text: 'all jobs', path: 'alljobs?status=all&jobType=all&sort=latest&page=1&search=', icon: <MdQueryStats className="link-icon"/> },
   { id: 3, text: 'add jobs', path: 'addjobs', icon: <FaWpforms className="link-icon"/> },
   { id: 4, text: 'profile', path: 'profile', icon: <ImProfile className="link-icon"/> },
 ]

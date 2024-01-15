@@ -14,15 +14,24 @@ type JobCardType = {
   // "__v": 0
 }
 
-export default function JobCardContainer({jobDescriptionArr}:{jobDescriptionArr: JobCardType[]}){
+export default function JobCardContainer({jobDescriptionArr, countJobs}:{countJobs:number, jobDescriptionArr: JobCardType[]}){
 
   return(
-    <Wrapper>
-      {jobDescriptionArr.map((jobDescription)=>(
-         <JobCard key={jobDescription._id} jobdescription={jobDescription} />
-      ))}
-     
-
-    </Wrapper>
+    <>
+      {
+        !countJobs?
+        <div style={{fontWeight: "600", fontSize: "40px"}}>No jobs to display...</div> :
+        <div>
+          <p className="alljobs-divider">{countJobs} Jobs Found</p>
+          <Wrapper>
+            {jobDescriptionArr.map((jobDescription)=>(
+              <JobCard key={jobDescription._id} jobdescription={jobDescription} />
+            ))}
+          </Wrapper>
+        </div>
+      }
+    </>
+    
+   
   )
 }

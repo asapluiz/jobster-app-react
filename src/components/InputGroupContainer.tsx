@@ -46,7 +46,6 @@ export default function InputGroupContainer(
           onSubmit={(values, { setSubmitting }) => {
             sendSearchJobData(values)
             setSubmitting(false)
-            console.log(values)
           }}
         >
           {(formikProps) => (
