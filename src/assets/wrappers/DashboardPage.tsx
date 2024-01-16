@@ -15,7 +15,11 @@ const Wrapper = styled.main`
       display: block
     }
   }
-
+  .loader{
+    font-size: 30px;
+    text-align: center;
+    color:red;
+  }
 
 `
 

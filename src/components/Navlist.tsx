@@ -2,7 +2,7 @@ import React from "react";
 import Wrapper from "../assets/wrappers/Navlist";
 import Logo from "./Logo";
 import links from "../utils/links";
-import { Link } from "react-router-dom";
+import { Link, NavLink, } from "react-router-dom";
 
 
 
@@ -15,12 +15,23 @@ export default function Navlist(){
       
       <ul className="link-group">
         {links.map((link)=>(
-          <Link key={link.id} to={link.path} className="link-items">
+          <NavLink 
+            key={link.id} 
+            to={link.path} 
+            // className="link-items"
+            className={({ isActive, isPending }) =>
+                      isActive
+                        ? "link-items active"
+                        : isPending
+                        ? "link-items pending"
+                        : "link-items"
+            }
+          >
             <div className="link-inner-item">
-              <span>{link.icon}</span>
+              <span >{link.icon}</span>
               <p>{link.text}</p>
             </div>
-          </Link>
+          </NavLink>
         ))}
       </ul>
     

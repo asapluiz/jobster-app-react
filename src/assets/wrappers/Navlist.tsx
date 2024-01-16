@@ -44,6 +44,14 @@ const Wrapper = styled.section`
     width:25px;
     height:25px;
   }
+
+  .active{
+    color:blue;
+  }
+
+  .pending{
+    color:red;
+  }
 `
 
 export default Wrapper 

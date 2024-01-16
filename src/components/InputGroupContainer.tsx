@@ -18,7 +18,7 @@ export default function InputGroupContainer(
   ){
   
   const initialValues = ()=>{
-    let values: Record<string, string> = {}
+    let values: Record<string, any> = {}
     formFields.forEach((value)=>{
       values[value.name] = value.value
     })
