@@ -202,7 +202,7 @@ export const profileJobs = [
   {
     id:"2",
     label:"Last Name",
-    name:"lastname",
+    name:"lastName",
     type:"text",
     value:"",
     //  placeholder="Jane"

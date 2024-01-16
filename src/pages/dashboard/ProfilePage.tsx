@@ -1,7 +1,8 @@
 import { InputGroupContainer } from "../../components";
 import { profileJobs } from "../../utils/links";
-import { useSelector } from 'react-redux'
-import customFetch from "../../utils/axios";
+import { useSelector, useDispatch } from 'react-redux'
+import { toast } from "react-toastify";
+import { updateUser } from "../../redux store/userslice/userThunk";
 
 interface ReduxStateType{
   user:{
@@ -22,13 +23,24 @@ interface profileSubmitDataType{
   email:string
   location:string
 }
+
+interface patchDataRespType{
+  "user": {
+    "email": string
+    "lastName": string
+    "location": string
+    "name": string
+    "token": string
+}
+}
 export default function Profile(){
+  const dispatch = useDispatch();
   const user = useSelector((state:ReduxStateType) => state.user)
   const profileJobsValue = profileJobs.map(job => ({
     ...job,
     value: job.name === "name"?
       user.user.name :
-      job.name === "lastname"?
+      job.name === "lastName"?
       user.user.lastName:
       job.name === "email"?
       user.user.email:
@@ -36,10 +48,11 @@ export default function Profile(){
       user.user.location: ""
   }));
   
-  const profileData = (values:profileSubmitDataType)=>{
+  const profileData = async(values:profileSubmitDataType)=>{
     console.log("samuel eto", values)
-
-    customFetch.patch<>("/auth/updateUser", )
+    
+      const resp = await dispatch<any>(updateUser(values)) 
+      return resp
   }
 
   

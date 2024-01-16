@@ -2,7 +2,7 @@ import { createSlice, PayloadAction  } from '@reduxjs/toolkit'
 import {toast} from "react-toastify"
 import { getUserFromLocalStorage, addUserToLocalStorage } from '../../utils/localStorage'
 import { userStateType, responseUser } from '../reduxTypes'
-import { registerUser, loginUser } from './userThunk'
+import { registerUser, loginUser, updateUser } from './userThunk'
 
 
 
@@ -47,6 +47,23 @@ export const userSlice = createSlice({
       toast.success(`Hello There ${user.name}`);
     })
     .addCase(loginUser.rejected, (state, {payload})=>{
+      state.isLoading = false;
+      toast.error(payload);
+    })
+
+
+    .addCase(updateUser.pending, (state)=>{
+      state.isLoading = true;
+    })
+    .addCase(updateUser.fulfilled, (state, {payload})=>{
+      state.isLoading = false;
+      const {user} = payload;
+      state.user = user;
+      addUserToLocalStorage(user)
+      toast.success("updated successfully");
+
+    })
+    .addCase(updateUser.rejected, (state, {payload})=>{
       state.isLoading = false;
       toast.error(payload);
     })

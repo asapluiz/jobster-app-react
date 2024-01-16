@@ -33,7 +33,7 @@ export const updateUser = createAsyncThunk<responseUser, updateUserType, { rejec
   'user/updateUser',
   async (user, thunkAPI) => {
     try {
-      const resp = await customFetch.post<responseUser>('/auth/updateUser', user);
+      const resp = await customFetch.patch<responseUser>('/auth/updateUser', user);
       return resp.data;
     } catch (error: unknown) {
       const typedError = error as ErrorResponse;
