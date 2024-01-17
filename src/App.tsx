@@ -1,12 +1,10 @@
-import React from "react"
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Landing, Error, Register, Dashboard } from "./pages";
 import { AddJobs, AllJobs, Profile, Stats } from "./pages/dashboard/";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import { loader as statLoader } from "./pages/dashboard/statsPage";
 import { loader as allJobs } from "./pages/dashboard/AllJobsPage";
-// import { loader as profileLoader } from "./pages/dashboard/ProfilePage";
+
 
 
 
@@ -39,7 +37,6 @@ function App() {
         {
           path: "profile",
           element: <Profile />,
-          // loader:profileLoader
         },
        
       ],

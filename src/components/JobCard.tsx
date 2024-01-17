@@ -1,6 +1,6 @@
-import React from "react";
+
 import Wrapper from "../assets/wrappers/JobCard";
-import { FaAlignLeft, FaUserCircle, FaCaretDown, FaCalendarAlt  } from 'react-icons/fa';
+import {  FaCalendarAlt  } from 'react-icons/fa';
 import { BiSolidNavigation, BiSolidBriefcaseAlt2  } from "react-icons/bi";
 import { format } from 'date-fns';
 import clsx from 'clsx';
@@ -13,13 +13,10 @@ export type JobCardType = {
   status: string,
   jobType: string,
   jobLocation: string,
-  // "createdBy": "6251efad2cfa7a2963501725",
   createdAt: string,
-  // "updatedAt": "2021-12-27T03:20:35.000Z",
-  // "__v": 0hgghg
 }
 export default function JobCard({jobdescription}:{jobdescription:JobCardType}){
-
+  
   return(
     <Wrapper>
       
@@ -51,7 +48,7 @@ export default function JobCard({jobdescription}:{jobdescription:JobCardType}){
         <div className="buttons-label">
           
           <div >
-            <button className="btn btn-small-edit">Edit</button>
+            <button  className="btn btn-small-edit">Edit</button>
             <button className="btn btn-small-delete ">Delete</button>
           </div>
         </div>

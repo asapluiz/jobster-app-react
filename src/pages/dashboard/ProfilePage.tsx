@@ -1,7 +1,6 @@
 import { InputGroupContainer } from "../../components";
 import { profileJobs } from "../../utils/links";
 import { useSelector, useDispatch } from 'react-redux'
-import { toast } from "react-toastify";
 import { updateUser } from "../../redux store/userslice/userThunk";
 
 interface ReduxStateType{
@@ -24,15 +23,6 @@ interface profileSubmitDataType{
   location:string
 }
 
-interface patchDataRespType{
-  "user": {
-    "email": string
-    "lastName": string
-    "location": string
-    "name": string
-    "token": string
-}
-}
 export default function Profile(){
   const dispatch = useDispatch();
   const user = useSelector((state:ReduxStateType) => state.user)
@@ -49,8 +39,6 @@ export default function Profile(){
   }));
   
   const profileData = async(values:profileSubmitDataType)=>{
-    console.log("samuel eto", values)
-    
       const resp = await dispatch<any>(updateUser(values)) 
       return resp
   }

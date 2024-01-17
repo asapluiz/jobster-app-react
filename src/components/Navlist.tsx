@@ -2,7 +2,7 @@ import React from "react";
 import Wrapper from "../assets/wrappers/Navlist";
 import Logo from "./Logo";
 import links from "../utils/links";
-import { Link, NavLink, } from "react-router-dom";
+import {  NavLink, } from "react-router-dom";
 
 
 

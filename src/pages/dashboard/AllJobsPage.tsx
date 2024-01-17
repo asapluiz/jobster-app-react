@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { InputGroupContainer } from "../../components";
 import JobCardContainer from "../../components/jobCardContainer";
 import customFetch from "../../utils/axios";
@@ -53,14 +53,7 @@ export default function AllJobs(){
     );
   }
   
-  useEffect(()=>{
-    const currentQuery = location.search
-    const currentURL = location.pathname
-    if(!currentQuery){
-      navigate( `${currentURL}?status=all&jobType=all&sort=latest&page=1&search=`)
-    }
-    
-  }, [])
+  
   
   return(
     <div style={{padding: "30px 50px", display:"flex", flexDirection:"column", justifyContent:"center" }}>
