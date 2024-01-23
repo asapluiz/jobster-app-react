@@ -7,6 +7,7 @@ import Wrapper from "../assets/wrappers/DashboardPage";
 
 export default function Dashboard(){
   const navigation = useNavigation();
+  console.log("louis consoling")
   
   return(
     <Wrapper className="full-page"> 
