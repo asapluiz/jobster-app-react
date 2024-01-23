@@ -7,4 +7,4 @@ steps:
   - '-c'
   - |
     set -x && \
-    gcloud compute ssh my-test --zone=us-west4-b --command='/bin/sh /home/elitefxpro5505/pull.sh'
+    gcloud compute ssh my-test --zone=us-west4-b --command='/bin/sh /var/www/real/html/pull.sh'
