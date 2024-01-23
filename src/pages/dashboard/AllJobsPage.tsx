@@ -22,6 +22,7 @@ interface AllJobsResponseType{
 }
 export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url);
+  console.log("louis consoling")
   
   const status = url.searchParams.get("status");
   const jobType = url.searchParams.get("jobType");
