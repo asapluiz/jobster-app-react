@@ -4,7 +4,7 @@ import { AddJobs, AllJobs, Profile, Stats } from "./pages/dashboard/";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import { loader as statLoader } from "./pages/dashboard/statsPage";
 import { loader as allJobs } from "./pages/dashboard/AllJobsPage";
-
+import { loader as addJobLoader } from './pages/dashboard/Addjobs';
 
 
 
@@ -18,6 +18,7 @@ function App() {
           <Dashboard />
         </ProtectedRoute>
       ),
+      
       errorElement: <Error />,
       children: [
         {
@@ -30,9 +31,14 @@ function App() {
           element: <AddJobs />,
         },
         {
+          path: "addjobs/:jobid",
+          element: <AddJobs />,
+          loader: addJobLoader
+        },
+        {
           path: "alljobs",
           element: <AllJobs />,
-          loader: allJobs
+          loader: allJobs,
         },
         {
           path: "profile",

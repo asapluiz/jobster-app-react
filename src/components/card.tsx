@@ -1,6 +1,5 @@
 import React from "react";
 import Wrapper from "../assets/wrappers/card";
-import { ImProfile } from 'react-icons/im';
 
 interface cardType{
   number:string;

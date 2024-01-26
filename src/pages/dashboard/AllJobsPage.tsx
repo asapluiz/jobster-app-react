@@ -7,6 +7,7 @@ import { JobCardType } from "../../components/JobCard";
 import { useNavigate, useLoaderData, useLocation, LoaderFunction } from 'react-router-dom';
 import {toast} from "react-toastify"
 
+
 interface AllJobsType{
   search?:string
   sort?: string
@@ -15,14 +16,13 @@ interface AllJobsType{
   page?:string
 }
 
-interface AllJobsResponseType{
+export interface AllJobsResponseType{
   jobs: JobCardType[]
   totalJobs: number
   numOfPages: number
 }
 export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url);
-  console.log("louis consoling yes boss")
   
   const status = url.searchParams.get("status");
   const jobType = url.searchParams.get("jobType");
@@ -43,7 +43,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 }
 
 export default function AllJobs(){
-  const { jobs, totalJobs, numOfPages } = useLoaderData() as AllJobsResponseType;
+  const { jobs, } = useLoaderData() as AllJobsResponseType;
   const navigate = useNavigate();
   let location = useLocation();
   
@@ -64,6 +64,8 @@ export default function AllJobs(){
 
         
         <JobCardContainer jobDescriptionArr={jobs} countJobs={jobs.length}/>
+
+        
     </div>
   ) 
 }

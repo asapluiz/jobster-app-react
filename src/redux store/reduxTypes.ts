@@ -25,6 +25,7 @@ export interface ErrorResponse {
 }
 
 export interface userStateType{
+  closeNav:boolean
   isLoading: boolean;
   user: UserlocalStorageType | null
 }

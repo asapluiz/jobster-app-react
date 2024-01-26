@@ -4,6 +4,9 @@ import {  FaCalendarAlt  } from 'react-icons/fa';
 import { BiSolidNavigation, BiSolidBriefcaseAlt2  } from "react-icons/bi";
 import { format } from 'date-fns';
 import clsx from 'clsx';
+import { Link, useNavigate } from "react-router-dom";
+import customFetch from "../utils/axios";
+import useDelete from "./deleteHook";
 
 
 export type JobCardType = {
@@ -15,7 +18,22 @@ export type JobCardType = {
   jobLocation: string,
   createdAt: string,
 }
+
+const deleteItem = async (itemId:string) => {
+  await customFetch.delete(`/jobs/${itemId}`)
+};
+
 export default function JobCard({jobdescription}:{jobdescription:JobCardType}){
+  const { handleDelete, isLoading, error } = useDelete(deleteItem);
+  const navigate = useNavigate();
+
+    const onDeleteClick =  (itemId:string) => {
+      handleDelete(itemId, () => {
+        navigate('/alljobs?status=all&jobType=all&sort=latest&page=1&search=')
+      });
+    };
+
+  
   
   return(
     <Wrapper>
@@ -48,8 +66,8 @@ export default function JobCard({jobdescription}:{jobdescription:JobCardType}){
         <div className="buttons-label">
           
           <div >
-            <button  className="btn btn-small-edit">Edit</button>
-            <button className="btn btn-small-delete ">Delete</button>
+            <Link to={`/addjobs/${jobdescription._id}`}><button  className="btn btn-small-edit">Edit</button></Link>
+            <button  className="btn btn-small-delete " onClick={()=>onDeleteClick(jobdescription._id)}>Delete</button>
           </div>
         </div>
       </div>

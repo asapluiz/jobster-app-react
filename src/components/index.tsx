@@ -7,3 +7,5 @@ export {default as Card} from "./card"
 export {default as InputGroupContainer} from "./InputGroupContainer"
 export {default as JobCard} from "./JobCard"
 export {default as CardContainer} from "./cardContainer"
+export {default as BarChart} from "./barchartComponent"
+

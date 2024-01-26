@@ -7,6 +7,7 @@ import { registerUser, loginUser, updateUser } from './userThunk'
 
 
 const initialState: userStateType = {
+  closeNav:false,
   isLoading: false,
   user: getUserFromLocalStorage()
 }
